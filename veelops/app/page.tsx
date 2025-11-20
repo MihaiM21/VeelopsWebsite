@@ -67,8 +67,8 @@ export default function Home() {
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/features" className="text-gray-300 hover:text-white transition-colors">Features</Link>
               <Link href="/pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</Link>
-              <a href="#docs" className="text-gray-300 hover:text-white transition-colors">Docs</a>
-              <Link href="/pricing" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-all transform hover:scale-105">
+              <Link href="/docs" className="text-gray-300 hover:text-white transition-colors">Docs</Link>
+              <Link href="/auth" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-all transform hover:scale-105">
                 Get Started
               </Link>
             </div>
@@ -116,7 +116,7 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <Link href="/pricing" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
+            <Link href="/auth" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
               Start Deploying
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -350,9 +350,9 @@ export default function Home() {
                   <span>Docker & Git integration</span>
                 </li>
               </ul>
-              <button className="w-full bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-lg transition-colors">
-                Download Free
-              </button>
+              <Link href="/auth" className="w-full bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-lg transition-colors text-center inline-block">
+                Get Started Free
+              </Link>
             </motion.div>
 
             {/* Starter Plan */}
@@ -390,9 +390,9 @@ export default function Home() {
                   <span>Email support</span>
                 </li>
               </ul>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition-colors">
+              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition-colors text-center inline-block">
                 Start Trial
-              </button>
+              </Link>
             </motion.div>
 
             {/* Pro Plan */}
@@ -433,9 +433,9 @@ export default function Home() {
                   <span>Priority support</span>
                 </li>
               </ul>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition-colors">
+              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition-colors text-center inline-block">
                 Start Trial
-              </button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -457,13 +457,13 @@ export default function Home() {
               Start with our free self-hosted option or jump straight to our managed cloud.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/pricing" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
+              <Link href="/auth" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
                 Try Managed Hosting
                 <ChevronRight className="w-4 h-4" />
               </Link>
-              <a href="#download" className="border border-blue-500/30 hover:border-blue-400 bg-blue-500/10 hover:bg-blue-500/20 text-gray-200 hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-200">
-                Download Self-Hosted
-              </a>
+              <Link href="/auth" className="border border-blue-500/30 hover:border-blue-400 bg-blue-500/10 hover:bg-blue-500/20 text-gray-200 hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-200">
+                Get Started Free
+              </Link>
             </div>
           </motion.div>
         </div>

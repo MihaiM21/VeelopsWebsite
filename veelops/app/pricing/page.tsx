@@ -19,7 +19,7 @@ import Link from "next/link";
 
 export default function Pricing() {
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen bg-black relative overflow-hidden select-text">
       {/* Background gradient overlay - reduced opacity */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-blue-800/10"></div>
       
@@ -40,8 +40,8 @@ export default function Pricing() {
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/features" className="text-gray-300 hover:text-white transition-colors">Features</Link>
               <Link href="/pricing" className="text-blue-400 font-medium">Pricing</Link>
-              <a href="#docs" className="text-gray-300 hover:text-white transition-colors">Docs</a>
-              <Link href="#get-started" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+              <Link href="/docs" className="text-gray-300 hover:text-white transition-colors">Docs</Link>
+              <Link href="/auth" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
                 Get Started
               </Link>
             </div>
@@ -195,9 +195,9 @@ export default function Pricing() {
                   <span>Custom domains</span>
                 </li>
               </ul>
-              <button className="w-full bg-gray-700 text-gray-300 py-3 rounded-lg cursor-not-allowed opacity-75 font-medium">
-                Coming Soon
-              </button>
+              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Get Started Free
+              </Link>
             </motion.div>
 
             {/* Basic Plan */}
@@ -239,9 +239,9 @@ export default function Pricing() {
                   <span>Automatic backups</span>
                 </li>
               </ul>
-              <button className="w-full bg-gray-700 text-gray-300 py-3 rounded-lg cursor-not-allowed opacity-75 font-medium">
-                Coming Soon
-              </button>
+              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Start Trial
+              </Link>
             </motion.div>
 
             {/* Pro Plan */}
@@ -289,9 +289,9 @@ export default function Pricing() {
                   <span>Global CDN</span>
                 </li>
               </ul>
-              <button className="w-full bg-gray-700 text-gray-300 py-3 rounded-lg cursor-not-allowed opacity-75 font-medium">
-                Coming Soon
-              </button>
+              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Start Trial
+              </Link>
             </motion.div>
 
             {/* Enterprise Plan */}
@@ -332,9 +332,9 @@ export default function Pricing() {
                   <span>SOC 2 compliance</span>
                 </li>
               </ul>
-              <button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg transition-colors font-medium">
+              <Link href="/auth" className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
                 Contact Sales
-              </button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -486,10 +486,10 @@ export default function Pricing() {
               Join thousands of developers who are already using our platform to deploy their applications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 transition-colors">
+              <Link href="/auth" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 transition-colors">
                 Start Free Trial
                 <ChevronRight className="w-4 h-4" />
-              </button>
+              </Link>
               <Link href="/features" className="border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
                 View Features
               </Link>
@@ -499,7 +499,7 @@ export default function Pricing() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-slate-900/50 border-t border-gray-800">
+      <footer className="py-12 px-6 bg-slate-900/50 border-t border-gray-800 pb-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <Link href="/" className="flex items-center space-x-3 mb-4 md:mb-0">

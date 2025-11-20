@@ -27,7 +27,7 @@ import Link from "next/link";
 
 export default function Features() {
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen bg-black relative overflow-hidden select-text">
       {/* Background gradient overlay - reduced opacity */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-blue-800/10"></div>
       
@@ -48,8 +48,8 @@ export default function Features() {
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/features" className="text-blue-400 font-medium">Features</Link>
               <Link href="/pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</Link>
-              <a href="#docs" className="text-gray-300 hover:text-white transition-colors">Docs</a>
-              <Link href="/pricing" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+              <Link href="/docs" className="text-gray-300 hover:text-white transition-colors">Docs</Link>
+              <Link href="/auth" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
                 Get Started
               </Link>
             </div>
@@ -320,11 +320,11 @@ export default function Features() {
               Join thousands of developers who've made the switch to Veelops for faster, more reliable deployments.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/pricing" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 transition-colors">
+              <Link href="/auth" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 transition-colors">
                 Start Free Trial
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link href="/#demo" className="border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
+              <Link href="/dashboard" className="border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
                 View Demo
               </Link>
             </div>
@@ -333,7 +333,7 @@ export default function Features() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-slate-900/50 border-t border-gray-800">
+      <footer className="py-12 px-6 bg-slate-900/50 border-t border-gray-800 pb-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <Link href="/" className="flex items-center space-x-3 mb-4 md:mb-0">
