@@ -13,7 +13,8 @@ import {
   Star,
   Users,
   Globe,
-  ChevronRight
+  ChevronRight,
+  X
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -138,12 +139,13 @@ export default function Home() {
                   <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
                   <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse delay-100"></div>
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse delay-200"></div>
-                  <span className="ml-4 text-gray-400 text-sm">veelops.app/dashboard</span>
+                  <span className="ml-4 text-gray-400 text-sm">app.veelops.com/dashboard</span>
                 </div>
               </div>
-              <div className="p-8 h-96 bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center">
+              <div className="p-0 h-96 bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center">
                 <div className="text-gray-400 text-lg text-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-500/20 via-blue-600/30 to-blue-700/20 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-blue-500/30 backdrop-blur-sm">
+                  <img src="/Dashboard_Image.png" alt="Dashboard Preview" className="mx-auto w-full mt-10" />
+                  {/* <div className="w-24 h-24 bg-gradient-to-br from-blue-500/20 via-blue-600/30 to-blue-700/20 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-blue-500/30 backdrop-blur-sm">
                     <Image
                       src="/Veelops logo.png"
                       alt="Veelops Logo"
@@ -151,10 +153,10 @@ export default function Home() {
                       height={48}
                       className="object-contain opacity-80"
                     />
-                  </div>
-                  Dashboard Preview
+                  </div> */}
+                  {/* Dashboard Preview
                   <br />
-                  <span className="text-sm text-blue-400">Beautiful interface for easy deployment</span>
+                  <span className="text-sm text-blue-400">Beautiful interface for easy deployment</span> */}
                 </div>
               </div>
             </div>
@@ -301,96 +303,91 @@ export default function Home() {
 
       {/* Pricing Section */}
       <section id="pricing" className="py-20 px-6 bg-black/40 backdrop-blur-sm relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Deployment</span> Style
-            </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              Self-host for complete control or let us handle the infrastructure
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Self-Hosted Plan */}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-4 gap-8">
+            {/* Free Plan */}
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.05, duration: 0.3, ease: "easeOut" }}
-              whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              className="bg-black/60 backdrop-blur-sm rounded-lg p-6 border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 group"
+              transition={{ delay: 0.05, duration: 0.3 }}
+              className="bg-black/80 rounded-lg p-6 border border-gray-700/50 hover:border-gray-600/50 transition-all"
             >
               <div className="text-center mb-6">
-                <h3 className="text-xl font-bold text-white mb-2">Self-Hosted</h3>
-                <div className="text-3xl font-bold text-blue-400 mb-2">Free</div>
-                <p className="text-gray-400 text-sm">Open source & forever free</p>
+                <h3 className="text-xl font-bold text-white mb-2">Free</h3>
+                <div className="text-3xl font-bold text-blue-400 mb-2">$0</div>
+                <p className="text-gray-400 text-sm">Self-Hosted</p>
+                <div className="mt-4 text-xs text-gray-500">
+                  <span className="bg-gray-700/50 px-2 py-1 rounded">Bring your own server</span>
+                </div>
               </div>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
-                  <span>Unlimited applications</span>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Full Veelops platform</span>
                 </li>
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
-                  <span>Full control & customization</span>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Deployments & pipelines</span>
                 </li>
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
-                  <span>Community support</span>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Monitoring dashboard</span>
                 </li>
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
-                  <span>Docker & Git integration</span>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Integrations & webhooks</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-500">
+                  <X className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                  <span>Managed hosting</span>
                 </li>
               </ul>
-              <Link href="/auth" className="w-full bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-lg transition-colors text-center inline-block">
+              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
                 Get Started Free
               </Link>
             </motion.div>
 
-            {/* Starter Plan */}
+            {/* Basic Plan */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-gray-800/30 rounded-lg p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all relative"
+              className="bg-black/80 rounded-lg p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all"
             >
-              <div className="text-center mb-6">
+              <div className="text-center mb-8">
                 <h3 className="text-xl font-bold text-white mb-2">Starter</h3>
-                <div className="text-3xl font-bold text-blue-400 mb-2">$29<span className="text-lg text-gray-400">/mo</span></div>
-                <p className="text-gray-400 text-sm">Perfect for small projects</p>
+                <div className="text-3xl font-bold text-blue-400 mb-2">$4<span className="text-lg text-gray-400">/mo</span></div>
+                <p className="text-gray-400 text-sm">For small projects</p>
+                <div className="mt-4 text-xs text-gray-500">
+                  <span className="bg-gray-700/50 px-2 py-1 rounded">0.5 CPU</span>
+                  <span className="bg-gray-700/50 px-2 py-1 rounded ml-1">512MB RAM</span>
+                </div>
               </div>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
-                  <span>Up to 5 applications</span>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Fully managed hosting</span>
                 </li>
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
-                  <span>Managed infrastructure</span>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Automated SSL</span>
                 </li>
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Advanced monitoring</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Custom domains</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
                   <span>Automatic backups</span>
                 </li>
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
-                  <span>SSL certificates</span>
-                </li>
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
-                  <span>Email support</span>
-                </li>
               </ul>
-              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition-colors text-center inline-block">
+              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
                 Start Trial
               </Link>
             </motion.div>
@@ -401,40 +398,90 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="bg-gray-800/30 rounded-lg p-6 border border-blue-500/50 hover:border-blue-400/50 transition-all relative"
+              className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-lg p-6 border border-blue-500/50 relative"
             >
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Popular</span>
+                <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                  <Star className="w-3 h-3" />
+                  Popular
+                </span>
               </div>
               <div className="text-center mb-6">
                 <h3 className="text-xl font-bold text-white mb-2">Pro</h3>
-                <div className="text-3xl font-bold text-blue-400 mb-2">$99<span className="text-lg text-gray-400">/mo</span></div>
-                <p className="text-gray-400 text-sm">For growing businesses</p>
+                <div className="text-3xl font-bold text-blue-400 mb-2">$10<span className="text-lg text-gray-400">/mo</span></div>
+                <p className="text-gray-400 text-sm">For growing teams</p>
+                <div className="mt-4 text-xs text-gray-500">
+                  <span className="bg-blue-700/30 px-2 py-1 rounded">1 CPU</span>
+                  <span className="bg-blue-700/30 px-2 py-1 rounded ml-1">1GB RAM</span>
+                </div>
               </div>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
-                  <span>Unlimited applications</span>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Up to 10 applications</span>
                 </li>
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
-                  <span>Auto-scaling infrastructure</span>
-                </li>
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
-                  <span>Global CDN included</span>
-                </li>
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
-                  <span>Advanced monitoring</span>
-                </li>
-                <li className="flex items-center gap-2 text-gray-300">
-                  <Check className="w-4 h-4 text-green-400" />
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
                   <span>Priority support</span>
                 </li>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Auto-scaling</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Database included</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Global CDN</span>
+                </li>
               </ul>
-              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition-colors text-center inline-block">
+              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
                 Start Trial
+              </Link>
+            </motion.div>
+
+            {/* Enterprise Plan */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="bg-black/80 rounded-lg p-6 border border-gray-700/50 hover:border-purple-500/50 transition-all"
+            >
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-white mb-2">Enterprise</h3>
+                <div className="text-3xl font-bold text-purple-400 mb-2">Custom</div>
+                <p className="text-gray-400 text-sm">For large organizations</p>
+                <div className="mt-4 text-xs text-gray-500">
+                  <span className="bg-gray-700/50 px-2 py-1 rounded">Custom resources</span>
+                </div>
+              </div>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Unlimited applications</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>24/7 dedicated support</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>SLA guarantees</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>Custom integrations</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span>SOC 2 compliance</span>
+                </li>
+              </ul>
+              <Link href="/auth" className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Contact Sales
               </Link>
             </motion.div>
           </div>

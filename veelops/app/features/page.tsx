@@ -29,7 +29,27 @@ export default function Features() {
   return (
     <div className="min-h-screen bg-black relative overflow-hidden select-text">
       {/* Background gradient overlay - reduced opacity */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-blue-800/10"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-blue-800/10"></div> */}
+      <div className="absolute inset-0 opacity-40">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgb(59 130 246)" strokeWidth="1.5" opacity="1"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)">
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              values="0,0; -60,60; 0,0"
+              dur="25s"
+              repeatCount="indefinite"
+            />
+          </rect>
+        </svg>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-blue-800/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-blue-500/20">
@@ -58,7 +78,7 @@ export default function Features() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 relative z-10">
+      <section className="pt-32 pb-8 px-6 relative z-10">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
@@ -80,7 +100,7 @@ export default function Features() {
       </section>
 
       {/* Core Features Grid */}
-      <section className="py-16 px-6 relative z-10">
+      <section className="py-0 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -145,8 +165,8 @@ export default function Features() {
       </section>
 
       {/* Performance & Security */}
-      <section className="py-16 px-6 bg-slate-800/20">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 px-6 bg-black opacity-90 relative z-10">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -238,7 +258,7 @@ export default function Features() {
       </section>
 
       {/* Developer Experience */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 opacity-90">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -305,7 +325,7 @@ export default function Features() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-blue-600/10 to-blue-800/10">
+      <section className="py-20 px-6 bg-gradient-to-r from-blue-600/10 to-blue-800/10 opacity-90">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -333,7 +353,7 @@ export default function Features() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-slate-900/50 border-t border-gray-800 pb-16">
+      <footer className="py-12 px-6 bg-slate-900/50 border-t border-gray-800 pb-16 opacity-90">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <Link href="/" className="flex items-center space-x-3 mb-4 md:mb-0">
