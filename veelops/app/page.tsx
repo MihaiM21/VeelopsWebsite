@@ -343,9 +343,12 @@ export default function Home() {
                   <span>Managed hosting</span>
                 </li>
               </ul>
-              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
-                Get Started Free
+              <Link href="" className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Coming Soon
               </Link>
+              {/* <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Start Trial
+              </Link> */}
             </motion.div>
 
             {/* Basic Plan */}
@@ -361,8 +364,8 @@ export default function Home() {
                 <div className="text-3xl font-bold text-blue-400 mb-2">$4<span className="text-lg text-gray-400">/mo</span></div>
                 <p className="text-gray-400 text-sm">For small projects</p>
                 <div className="mt-4 text-xs text-gray-500">
-                  <span className="bg-gray-700/50 px-2 py-1 rounded">0.5 CPU</span>
-                  <span className="bg-gray-700/50 px-2 py-1 rounded ml-1">512MB RAM</span>
+                  <span className="bg-gray-700/50 px-2 py-1 rounded">1 vCPU</span>
+                  <span className="bg-gray-700/50 px-2 py-1 rounded ml-1">1GB RAM</span>
                 </div>
               </div>
               <ul className="space-y-3 mb-6">
@@ -387,9 +390,12 @@ export default function Home() {
                   <span>Automatic backups</span>
                 </li>
               </ul>
-              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
-                Start Trial
+              <Link href="" className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Coming Soon
               </Link>
+              {/* <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Start Trial
+              </Link> */}
             </motion.div>
 
             {/* Pro Plan */}
@@ -411,8 +417,8 @@ export default function Home() {
                 <div className="text-3xl font-bold text-blue-400 mb-2">$10<span className="text-lg text-gray-400">/mo</span></div>
                 <p className="text-gray-400 text-sm">For growing teams</p>
                 <div className="mt-4 text-xs text-gray-500">
-                  <span className="bg-blue-700/30 px-2 py-1 rounded">1 CPU</span>
-                  <span className="bg-blue-700/30 px-2 py-1 rounded ml-1">1GB RAM</span>
+                  <span className="bg-blue-700/30 px-2 py-1 rounded">2 vCPU</span>
+                  <span className="bg-blue-700/30 px-2 py-1 rounded ml-1">2GB RAM</span>
                 </div>
               </div>
               <ul className="space-y-3 mb-6">
@@ -437,9 +443,12 @@ export default function Home() {
                   <span>Global CDN</span>
                 </li>
               </ul>
-              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
-                Start Trial
+              <Link href="" className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Coming Soon
               </Link>
+              {/* <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Start Trial
+              </Link> */}
             </motion.div>
 
             {/* Enterprise Plan */}
@@ -480,9 +489,12 @@ export default function Home() {
                   <span>SOC 2 compliance</span>
                 </li>
               </ul>
-              <Link href="/auth" className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
-                Contact Sales
+              <Link href="" className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Coming Soon
               </Link>
+              {/* <Link href="/auth" className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Contact Sales
+              </Link> */}
             </motion.div>
           </div>
         </div>
