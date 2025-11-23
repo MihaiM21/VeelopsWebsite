@@ -20,8 +20,29 @@ import Link from "next/link";
 export default function Pricing() {
   return (
     <div className="min-h-screen bg-black relative overflow-hidden select-text">
-      {/* Background gradient overlay - reduced opacity */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-blue-800/10"></div>
+      {/* Animated Grid Background */}
+      <div className="absolute inset-0 opacity-40">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgb(59 130 246)" strokeWidth="1.5" opacity="1"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)">
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              values="0,0; -60,60; 0,0"
+              dur="25s"
+              repeatCount="indefinite"
+            />
+          </rect>
+        </svg>
+      </div>
+      
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-blue-800/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-blue-500/20">
@@ -50,20 +71,13 @@ export default function Pricing() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 relative z-10">
+      <section className="pt-32 pb-0 px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Simple, transparent
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">
-                {" "}pricing
-              </span>
-            </h1>
-            
             {/* Coming Soon Banner */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -76,20 +90,28 @@ export default function Pricing() {
                 Coming Soon - ETA Q2 2026
               </span>
             </motion.div>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Simple, transparent
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">
+                {" "}pricing
+              </span>
+            </h1>
+            
+            
             
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
               Choose the right service type and instance for your needs. Start free, scale as you grow.
             </p>
-            <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-400/30 rounded-full px-4 py-2 backdrop-blur-sm">
+            {/* <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-400/30 rounded-full px-4 py-2 backdrop-blur-sm">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
               <span className="text-green-300 font-medium">50% cheaper than competitors</span>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </section>
 
       {/* Pricing Comparison */}
-      <section className="pb-16 px-6 relative z-10">
+      {/* <section className="pb-16 px-6 relative z-10 opacity-90">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -150,10 +172,10 @@ export default function Pricing() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Main Pricing Plans */}
-      <section className="py-16 px-6">
+      <section className="pb-16 pt-4 px-6 opacity-90">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-4 gap-8">
             {/* Free Plan */}
@@ -167,37 +189,39 @@ export default function Pricing() {
               <div className="text-center mb-6">
                 <h3 className="text-xl font-bold text-white mb-2">Free</h3>
                 <div className="text-3xl font-bold text-blue-400 mb-2">$0</div>
-                <p className="text-gray-400 text-sm">Perfect for testing</p>
+                <p className="text-gray-400 text-sm">Self-Hosted</p>
                 <div className="mt-4 text-xs text-gray-500">
-                  <span className="bg-gray-700/50 px-2 py-1 rounded">0.1 CPU</span>
-                  <span className="bg-gray-700/50 px-2 py-1 rounded ml-1">512MB RAM</span>
+                  <span className="bg-gray-700/50 px-2 py-1 rounded">Bring your own server</span>
                 </div>
               </div>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-3 text-gray-300">
                   <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span>1 application</span>
+                  <span>Full Veelops platform</span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
                   <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span>Community support</span>
+                  <span>Deployments & pipelines</span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
                   <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span>Basic monitoring</span>
+                  <span>Monitoring dashboard</span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
                   <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span>SSL certificates</span>
+                  <span>Integrations & webhooks</span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-500">
                   <X className="w-4 h-4 text-gray-500 flex-shrink-0" />
-                  <span>Custom domains</span>
+                  <span>Managed hosting</span>
                 </li>
               </ul>
-              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
-                Get Started Free
+              <Link href="" className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Coming Soon
               </Link>
+              {/* <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Get Started Free
+              </Link> */}
             </motion.div>
 
             {/* Basic Plan */}
@@ -209,22 +233,22 @@ export default function Pricing() {
               className="bg-black/80 rounded-lg p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all"
             >
               <div className="text-center mb-8">
-                <h3 className="text-xl font-bold text-white mb-2">Hobby</h3>
-                <div className="text-3xl font-bold text-blue-400 mb-2">$3<span className="text-lg text-gray-400">/mo</span></div>
+                <h3 className="text-xl font-bold text-white mb-2">Starter</h3>
+                <div className="text-3xl font-bold text-blue-400 mb-2">$4<span className="text-lg text-gray-400">/mo</span></div>
                 <p className="text-gray-400 text-sm">For small projects</p>
                 <div className="mt-4 text-xs text-gray-500">
-                  <span className="bg-gray-700/50 px-2 py-1 rounded">0.5 CPU</span>
-                  <span className="bg-gray-700/50 px-2 py-1 rounded ml-1">512MB RAM</span>
+                  <span className="bg-gray-700/50 px-2 py-1 rounded">1 vCPU</span>
+                  <span className="bg-gray-700/50 px-2 py-1 rounded ml-1">1GB RAM</span>
                 </div>
               </div>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-3 text-gray-300">
                   <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span>Up to 3 applications</span>
+                  <span>Fully managed hosting</span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
                   <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                  <span>Email support</span>
+                  <span>Automated SSL</span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
                   <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
@@ -239,9 +263,12 @@ export default function Pricing() {
                   <span>Automatic backups</span>
                 </li>
               </ul>
-              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
-                Start Trial
+              <Link href="" className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Coming Soon
               </Link>
+              {/* <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Start Trial
+              </Link> */}
             </motion.div>
 
             {/* Pro Plan */}
@@ -260,10 +287,10 @@ export default function Pricing() {
               </div>
               <div className="text-center mb-6">
                 <h3 className="text-xl font-bold text-white mb-2">Pro</h3>
-                <div className="text-3xl font-bold text-blue-400 mb-2">$14<span className="text-lg text-gray-400">/mo</span></div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">$10<span className="text-lg text-gray-400">/mo</span></div>
                 <p className="text-gray-400 text-sm">For growing teams</p>
                 <div className="mt-4 text-xs text-gray-500">
-                  <span className="bg-blue-700/30 px-2 py-1 rounded">1 CPU</span>
+                  <span className="bg-blue-700/30 px-2 py-1 rounded">2 vCPU</span>
                   <span className="bg-blue-700/30 px-2 py-1 rounded ml-1">2GB RAM</span>
                 </div>
               </div>
@@ -289,9 +316,12 @@ export default function Pricing() {
                   <span>Global CDN</span>
                 </li>
               </ul>
-              <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
-                Start Trial
+              <Link href="" className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Coming Soon
               </Link>
+              {/* <Link href="/auth" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Start Trial
+              </Link> */}
             </motion.div>
 
             {/* Enterprise Plan */}
@@ -332,16 +362,19 @@ export default function Pricing() {
                   <span>SOC 2 compliance</span>
                 </li>
               </ul>
-              <Link href="/auth" className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
-                Contact Sales
+              <Link href="" className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Coming Soon
               </Link>
+              {/* <Link href="/auth" className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg transition-colors font-medium text-center inline-block">
+                Contact Sales
+              </Link> */}
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Database Pricing */}
-      <section className="py-16 px-6 bg-slate-800/20">
+      {/* <section className="py-16 px-6 bg-slate-800/20 opacity-90">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -419,10 +452,10 @@ export default function Pricing() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 opacity-90">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -439,20 +472,20 @@ export default function Pricing() {
             {[
               {
                 question: "Is Veelops really free to use?",
-                answer: "Yes! Our free tier includes 1 application with basic monitoring and SSL certificates. Perfect for personal projects and testing."
+                answer: "Yes! Our free tier self-hosted plan will be forever free and will include all features. Perfect for personal projects."
               },
               {
-                question: "How does Veelops compare to Heroku pricing?",
-                answer: "We're up to 50% cheaper than Heroku while offering the same or better performance. Our Basic plan at $3/mo provides similar resources to Heroku's $25/mo plan."
+                question: "How does Veelops compare to competitors pricing?",
+                answer: "We're up to 50% cheaper than competitors while offering the same or better performance. Our Basic plan at $4/mo provides competitive value."
               },
               {
                 question: "Can I migrate from other platforms?",
                 answer: "Absolutely! We provide migration tools and guides to help you move from Heroku, Vercel, Netlify, and other platforms with minimal downtime."
               },
-              {
-                question: "What's included in the database add-ons?",
-                answer: "All database plans include managed PostgreSQL or MySQL with automated backups, monitoring, and security patches. No maintenance required on your part."
-              }
+              // {
+              //   question: "What's included in the database add-ons?",
+              //   answer: "All database plans include managed PostgreSQL or MySQL with automated backups, monitoring, and security patches. No maintenance required on your part."
+              // }
             ].map((faq, index) => (
               <motion.div
                 key={index}
@@ -471,7 +504,7 @@ export default function Pricing() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-blue-600/10 to-blue-800/10">
+      <section className="py-20 px-6 bg-gradient-to-r from-blue-600/10 to-blue-800/10 opacity-90">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -499,7 +532,7 @@ export default function Pricing() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-slate-900/50 border-t border-gray-800 pb-16">
+      <footer className="py-12 px-6 bg-slate-900/50 border-t border-gray-800 pb-16 opacity-90">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <Link href="/" className="flex items-center space-x-3 mb-4 md:mb-0">
